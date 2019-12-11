@@ -22,6 +22,6 @@ public final class App {
      * @param args takes args to the to the main.
      */
     public static void main(final String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Hello World!" );
     }
 }
