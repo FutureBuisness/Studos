@@ -10,6 +10,7 @@ import org.junit.Test;
 public class AppTest {
     /**
      * Rigorous Test :-).
+     * Dodaje zmiany.
      */
     @Test
     public void shouldAnswerWithTrue() {

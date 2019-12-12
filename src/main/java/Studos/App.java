@@ -14,6 +14,7 @@ public final class App {
      */
     private App() {
         // not called
+        //jajko
     }
 
     /**
