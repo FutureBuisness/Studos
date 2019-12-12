@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.19">
+<<<<<<< HEAD
+=======
+<file name="C:\Users\Sebastian\StudosApp\Studos\src\main\java\studos\App.java">
+</file>
+<file name="C:\Users\Sebastian\StudosApp\Studos\src\main\java\studos\package-info.java">
+</file>
+>>>>>>> a15a57775f88bf58a8c061e6cda4ce835cc89781
 </checkstyle>

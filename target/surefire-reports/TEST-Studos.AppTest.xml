@@ -1,64 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="studos.AppTest" time="0.067" tests="1" errors="0" skipped="0" failures="0">
+=======
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="studos.AppTest" time="0.04" tests="1" errors="0" skipped="0" failures="0">
+>>>>>>> a15a57775f88bf58a8c061e6cda4ce835cc89781
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1250"/>
-    <property name="java.class.path" value="C:\JavaProjects\Studos\target\test-classes;C:\JavaProjects\Studos\target\classes;C:\Users\Adrian\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Adrian\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
-    <property name="java.vm.vendor" value="AdoptOpenJDK"/>
+    <property name="java.class.path" value="C:\Users\Sebastian\StudosApp\Studos\target\test-classes;C:\Users\Sebastian\StudosApp\Studos\target\classes;C:\Users\Sebastian\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Sebastian\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="Amazon.com Inc."/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
-    <property name="java.vendor.url" value="https://adoptopenjdk.net/"/>
+    <property name="java.vendor.url" value="https://aws.amazon.com/corretto/"/>
     <property name="user.timezone" value="Europe/Belgrade"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="os.name" value="Windows 10"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="PL"/>
+<<<<<<< HEAD
     <property name="sun.boot.library.path" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.5.10-hotspot\bin"/>
     <property name="sun.java.command" value="C:\Users\Adrian\AppData\Local\Temp\surefire10555395378832625123\surefirebooter1355959534478970267.jar C:\Users\Adrian\AppData\Local\Temp\surefire10555395378832625123 2019-12-12T23-41-03_370-jvmRun1 surefire12883242749176080280tmp surefire_04498530869433150691tmp"/>
+=======
+    <property name="sun.boot.library.path" value="C:\Biblioteki\Amazon-Corretto\jdk11.0.5_10\bin"/>
+    <property name="sun.java.command" value="C:\Users\SEBAST~1\AppData\Local\Temp\surefire17432963547812492503\surefirebooter11301317573799331440.jar C:\Users\Sebastian\AppData\Local\Temp\surefire17432963547812492503 2019-12-12T23-36-03_474-jvmRun1 surefire4034222961273652134tmp surefire_015809644679153386551tmp"/>
+>>>>>>> a15a57775f88bf58a8c061e6cda4ce835cc89781
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\JavaProjects\Studos\target\test-classes;C:\JavaProjects\Studos\target\classes;C:\Users\Adrian\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Adrian\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\Sebastian\StudosApp\Studos\target\test-classes;C:\Users\Sebastian\StudosApp\Studos\target\classes;C:\Users\Sebastian\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Sebastian\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="C:\Users\Adrian"/>
+    <property name="user.home" value="C:\Users\Sebastian"/>
     <property name="user.language" value="pl"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2019-10-15"/>
-    <property name="java.home" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.5.10-hotspot"/>
+    <property name="java.home" value="C:\Biblioteki\Amazon-Corretto\jdk11.0.5_10"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\JavaProjects\Studos"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="basedir" value="C:\Users\Sebastian\StudosApp\Studos"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+<<<<<<< HEAD
     <property name="surefire.real.class.path" value="C:\Users\Adrian\AppData\Local\Temp\surefire10555395378832625123\surefirebooter1355959534478970267.jar"/>
+=======
+    <property name="surefire.real.class.path" value="C:\Users\SEBAST~1\AppData\Local\Temp\surefire17432963547812492503\surefirebooter11301317573799331440.jar"/>
+>>>>>>> a15a57775f88bf58a8c061e6cda4ce835cc89781
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="11.0.5+10"/>
-    <property name="user.name" value="Adrian"/>
+    <property name="java.runtime.version" value="11.0.5+10-LTS"/>
+    <property name="user.name" value="Sebastian"/>
     <property name="path.separator" value=";"/>
     <property name="os.version" value="10.0"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="Cp1250"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="java.vendor.version" value="AdoptOpenJDK"/>
-    <property name="localRepository" value="C:\Users\Adrian\.m2\repository"/>
-    <property name="java.vendor.url.bug" value="https://github.com/AdoptOpenJDK/openjdk-build/issues"/>
-    <property name="java.io.tmpdir" value="C:\Users\Adrian\AppData\Local\Temp\"/>
+    <property name="java.vendor.version" value="Corretto-11.0.5.10.1"/>
+    <property name="localRepository" value="C:\Users\Sebastian\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-11/issues/"/>
+    <property name="java.io.tmpdir" value="C:\Users\SEBAST~1\AppData\Local\Temp\"/>
     <property name="java.version" value="11.0.5"/>
-    <property name="user.dir" value="C:\JavaProjects\Studos"/>
+    <property name="user.dir" value="C:\Users\Sebastian\StudosApp\Studos"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="java.library.path" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.5.10-hotspot\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;%MAVEN_HOME%\bin;C:\Program Files\nodejs\;C:\Users\Adrian\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\Adrian\AppData\Local\Programs\Python\Python38-32\;C:\Users\Adrian\AppData\Local\Microsoft\WindowsApps;C:\VSCode\Microsoft VS Code\bin;C:\Flutter\flutter\bin;C:\KURWASDK\tools;C:\KURWASDK\platform-tools;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.3\bin;;C:\Program Files (x86)\Nmap;C:\Program Files\JetBrains\PyCharm Community Edition 2019.2.3\bin;;C:\Users\Adrian\Desktop\apache-maven-3.6.2\bin;C:\Users\Adrian\AppData\Roaming\npm;."/>
-    <property name="java.vendor" value="AdoptOpenJDK"/>
+    <property name="java.library.path" value="C:\Biblioteki\Amazon-Corretto\jdk11.0.5_10\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Biblioteki\Amazon-Corretto\jdk11.0.5_10\bin;C:\Biblioteki\Amazon-Corretto\jdk1.8.0_232\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Maven\apache-maven-3.6.2\bin;C:\Users\Sebastian\AppData\Local\Programs\Microsoft VS Code\bin;."/>
+    <property name="java.vendor" value="Amazon.com Inc."/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.vm.version" value="11.0.5+10"/>
+    <property name="java.vm.version" value="11.0.5+10-LTS"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
+<<<<<<< HEAD
   <testcase name="shouldAnswerWithTrue" classname="studos.AppTest" time="0.008"/>
+=======
+  <testcase name="shouldAnswerWithTrue" classname="studos.AppTest" time="0.005"/>
+>>>>>>> a15a57775f88bf58a8c061e6cda4ce835cc89781
 </testsuite>
