@@ -11,6 +11,7 @@ package studos;
 public final class App {
     /**
      * Simple Constructor JavaDoc.
+     * test3.
      */
     private App() {
         // not called
