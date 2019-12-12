@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: studos.AppTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.221 s - in studos.AppTest
+=======
+<<<<<<< HEAD
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 s - in studos.AppTest
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 s - in studos.AppTest
+>>>>>>> a15a57775f88bf58a8c061e6cda4ce835cc89781
+>>>>>>> fe0236af4adabf7e706d6387c9f01de95b49c456
