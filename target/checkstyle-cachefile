@@ -1,11 +1,9 @@
-<<<<<<< HEAD
-#Thu Dec 12 23:40:56 CET 2019
-configuration*?=CECF8951450B2CB933672168D11C47EFB10CCE5A
-C\:\\JavaProjects\\Studos\\src\\main\\java\\studos\\package-info.java=1576092165214
-C\:\\JavaProjects\\Studos\\src\\main\\java\\studos\\App.java=1576189006549
-=======
-#Thu Dec 12 23:36:24 CET 2019
+#Fri Dec 13 00:17:07 CET 2019
+=\=\=\=\=\=\=
 configuration*?=A43CF4880C57705F7CFBAB04BF9081897B673FF1
+C\:\\JavaProjects\\Studos\\src\\main\\java\\studos\\package-info.java=1576092165214
 C\:\\Users\\Sebastian\\StudosApp\\Studos\\src\\main\\java\\studos\\package-info.java=1576190075540
+>>>>>>>=a15a57775f88bf58a8c061e6cda4ce835cc89781
 C\:\\Users\\Sebastian\\StudosApp\\Studos\\src\\main\\java\\studos\\App.java=1576190093579
->>>>>>> a15a57775f88bf58a8c061e6cda4ce835cc89781
+<<<<<<<=HEAD
+C\:\\JavaProjects\\Studos\\src\\main\\java\\studos\\App.java=1576189006549
