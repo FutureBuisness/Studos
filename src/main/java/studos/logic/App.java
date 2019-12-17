@@ -2,7 +2,7 @@
  * Info about this package doing something for package-info.java file.
  */
 
-package studos;
+package studos.logic;
 
 /**
  * Simple JavaDoc.
@@ -11,17 +11,13 @@ package studos;
 public final class App {
     /**
      * Simple Constructor JavaDoc.
-     * test3.
      */
     private App() {
-        // not called
-        //jajko
     }
 
     /**
      * Simple JavaDoc.
-     * This shit is horrible af.
-     * @param args takes args to the to the main.
+     * @param args takes args.
      */
     public static void main(final String[] args) {
         System.out.println("Hello World!");

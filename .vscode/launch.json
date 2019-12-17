@@ -1,18 +1,35 @@
 {
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
     "configurations": [
 
         {
             "type": "java",
-            "name": "CodeLens (Launch) - App",
+            "name": "Debug (Launch) - Current File",
             "request": "launch",
-            "mainClass": "studos.App",
+            "mainClass": "studos.gui.GuiStarter"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AppFx<Studos>",
+            "request": "launch",
+            "mainClass": "studos.gui.AppFx",
             "projectName": "Studos"
         },
         {
             "type": "java",
-            "name": "CodeLens (Launch) - App",
+            "name": "Debug (Launch)-GuiStarter<Studos>",
             "request": "launch",
-            "mainClass": "Studos.App",
+            "mainClass": "studos.gui.GuiStarter",
+            "projectName": "Studos"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-App<Studos>",
+            "request": "launch",
+            "mainClass": "studos.logic.App",
             "projectName": "Studos"
         }
     ]
