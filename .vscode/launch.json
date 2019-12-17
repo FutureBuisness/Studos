@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - GuiStarter",
+            "request": "launch",
+            "mainClass": "studos.gui.GuiStarter",
+            "projectName": "Studos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - GuiStarter",
+            "request": "launch",
+            "mainClass": "studos.GuiStarter",
+            "projectName": "Studos"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - AppFx",
+            "request": "launch",
+            "mainClass": "studos.AppFx",
+            "projectName": "Studos"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - App",
             "request": "launch",
             "mainClass": "studos.App",

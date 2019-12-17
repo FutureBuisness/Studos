@@ -8,6 +8,7 @@
   <artifactId>Studos</artifactId>
   <version>1.0-SNAPSHOT</version>
 
+
   <name>studos</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
@@ -18,28 +19,28 @@
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
-  <dependencies>
+    <dependencies>
 
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-controls</artifactId>
-      <version>11.0.2</version>
-    </dependency>
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-controls</artifactId>
+        <version>11.0.2</version>
+      </dependency>
 
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.11</version>
+        <scope>test</scope>
+      </dependency>
 
-    <dependency>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-pdf-plugin</artifactId>
-      <version>1.4</version>
-      <type>maven-plugin</type>
-    </dependency>
-  </dependencies>
+      <dependency>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pdf-plugin</artifactId>
+        <version>1.4</version>
+        <type>maven-plugin</type>
+      </dependency>
+    </dependencies>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
@@ -91,7 +92,45 @@
                 <mainClass>org.openjfx.App</mainClass>
             </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>3.0.0</version>
+          <executions>
+            <execution>
+              <id>add-source</id>
+              <phase>generate-sources</phase>
+              <goals>
+                <goal>add-source</goal>
+              </goals>
+              <configuration>
+                <sources>
+                  <source>src/main/java/studos/gui</source>
+                  <source>src/main/java/studos/logic</source>
+                </sources>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
+
+  <developers>
+    <developer>
+      <name>Adrian Podczaszy</name>
+      <email>adrianpodczaszy@gmail.com</email>
+      <organization>FutureBuisness</organization>
+    </developer>
+    <developer>
+      <name>Sebastian Woźny</name>
+      <email>sebastianwozny21@gmail.com</email>
+      <organization>FutureBuisness</organization>
+    </developer>
+    <developer>
+      <name>Oleg Grishanovich</name>
+      <email>emanuilsmith@gmail.com</email>
+      <organization>FutureBuisness</organization>
+    </developer>
+  </developers>
 </project>
