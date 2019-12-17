@@ -2,7 +2,7 @@
 package studos.gui;
 
 /**
- * Just a simple class to start our app.
+ //* Just a simple class to start our app.
  */
 public final class GuiStarter {
 
