@@ -3,5 +3,3 @@
  */
 
 package studos.logic;
-
-//github bot test
