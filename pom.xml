@@ -24,7 +24,26 @@
       <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-controls</artifactId>
-        <version>11.0.2</version>
+        <version>13</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-fxml</artifactId>
+        <version>13</version>
+      </dependency>  
+
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-graphics </artifactId>
+        <version>13</version>
+        <classifier>win</classifier>
+      </dependency>
+
+      <dependency>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-base</artifactId>
+        <version>11.0.1</version>
       </dependency>
 
       <dependency>
