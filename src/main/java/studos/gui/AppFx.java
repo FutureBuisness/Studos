@@ -4,12 +4,16 @@
 
 package studos.gui;
 
+import java.io.IOException;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
+import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
 /**
@@ -27,26 +31,45 @@ public class AppFx extends Application {
 
     /**
      * Dunno what to do.
+     * @throws IOException
      */
     @Override
-    public void start(final Stage primaryStage) {
-        primaryStage.setTitle("Hello World!");
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
+    public void start(final Stage primaryStage) throws IOException {
+        primaryStage.setTitle("Studos - Okno logowania aplikacji");
+        final FXMLLoader loader =
+         new FXMLLoader(GuiStarter.class.getResource("view/loginWindow.fxml"));
+        final Parent root = loader.load();
 
+        final int windowHeight = 400;
+        final int windowWidth = 642;
+
+        final Button loginButton =
+        (Button) loader.getNamespace().get("loginButton");
+        final TextField usernameText =
+        (TextField) loader.getNamespace().get("username");
+        final PasswordField passwordText =
+        (PasswordField) loader.getNamespace().get("password");
+
+        loginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(final ActionEvent event) {
-                System.out.println("Hello World!");
+            public void handle(final ActionEvent e) {
+                final String username = usernameText.getText();
+                final String password = passwordText.getText();
+
+                // if (!username.isEmpty() && !password.isEmpty()) {
+                //     /**
+                //     * Waiting for error showing text.
+                //     */
+                // } else {
+                //     /**
+                //     * Waiting for back end method.
+                //     */
+                // }
             }
         });
-
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        final int windowHeight = 300;
-        final int windowWidth = 250;
-
-        primaryStage.setScene(new Scene(root, windowHeight, windowWidth));
+        Scene scene = new Scene(root, windowWidth, windowHeight);
+        scene.getStylesheets().add("view/loginWindow.css");
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 }
