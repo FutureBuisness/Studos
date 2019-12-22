@@ -1,5 +1,4 @@
 package studos.gui;
 
-public class MainController{
-
+public class MainController {
 }

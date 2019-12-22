@@ -1,17 +1,16 @@
-/**
+/*
  * Info about this package doing something for package-info.java file.
  */
 
 package studos.logic;
 
 public class App {
-
-//     private boolean checkIt;    
-//     /*  
-//     Ta metoda otpowiada za poprawność wrowadzonych danych
-//     true jeżeli dane są poprawne 
-//     false jeżli nie są
-//     */ 
+//    private boolean checkIt;    
+    /*  
+    Ta metoda otpowiada za poprawność wrowadzonych danych
+    true jeżeli dane są poprawne 
+    false jeżli nie są
+    */ 
  
 //     public boolean ifInitialIsRight(String name, String password)
 //     {
@@ -37,5 +36,4 @@ public class App {
 //     }
 //     return checkIt;
 // }  
-
 }
