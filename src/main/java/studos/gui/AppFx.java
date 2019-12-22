@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * Main front-end class.
@@ -35,21 +36,38 @@ public class AppFx extends Application {
      */
     @Override
     public void start(final Stage primaryStage) throws IOException {
+        /**
+         * Setting window properties.
+         * Title, setting resizable to false and removing context menu from window.
+        */
         primaryStage.setTitle("Studos - Okno logowania aplikacji");
+        primaryStage.setResizable(false);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
+
+        /**
+         * loading controlls from .fxml file and setting size of window.
+        */
         final FXMLLoader loader =
          new FXMLLoader(GuiStarter.class.getResource("view/loginWindow.fxml"));
         final Parent root = loader.load();
 
-        final int windowHeight = 400;
-        final int windowWidth = 642;
+        final int windowHeight = 494;
+        final int windowWidth = 1110;
 
+        /**
+         * Creating variables from content in front-end controlls.
+        */
         final Button loginButton =
         (Button) loader.getNamespace().get("loginButton");
         final TextField usernameText =
-        (TextField) loader.getNamespace().get("username");
+        (TextField) loader.getNamespace().get("usernameTextField");
         final PasswordField passwordText =
-        (PasswordField) loader.getNamespace().get("password");
+        (PasswordField) loader.getNamespace().get("passwordTextField");
 
+        /**
+         * Button login execute.
+         * This action will run back-end login method.
+        */
         loginButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(final ActionEvent e) {
@@ -67,8 +85,12 @@ public class AppFx extends Application {
                 // }
             }
         });
+
+        /**
+         * Setting scene with settings declared above and loading .css loginWindow file.
+        */
         Scene scene = new Scene(root, windowWidth, windowHeight);
-        scene.getStylesheets().add("view/loginWindow.css");
+        scene.getStylesheets().add(getClass().getResource("view/loginWindow.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.show();
     }

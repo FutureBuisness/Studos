@@ -1,3 +1,62 @@
-.button {
-    background-color: black;
+#loginWindow {
+    -fx-background-color:white;
+}
+
+#applicationNameText {
+    -fx-fill:#120b9e;
+}
+
+#usernameTextField {
+    -fx-background-color: -fx-text-box-border, white ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+    -fx-font-size: 18px;
+    -fx-text-fill:black;
+}
+
+#usernameTextField:hover {
+    -fx-text-box-border: #120b9e;
+}
+
+#usernameTextField:focused {
+    -fx-text-box-border: #120b9e;
+}
+
+#passwordTextField {
+    -fx-background-color: -fx-text-box-border, white ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+    -fx-font-size: 18px;
+    -fx-text-fill:black;
+}
+
+#passwordTextField:hover {
+    -fx-text-box-border: #120b9e;
+}
+#passwordTextField:focused {
+    -fx-text-box-border: #120b9e;
+}
+
+#loginButton {
+    -fx-text-fill: white;
+    -fx-background-color: rgb(255, 0, 85);
+    -fx-font-size: 18px;
+}
+
+#loginButton:hover {
+    -fx-background-color: rgb(238, 2, 81);
+    -fx-cursor: hand;
+
+}
+
+#loginHeader {
+    -fx-font-size: 45px;
+}
+
+#loginSmallHeader {
+    -fx-font-size: 18px;
+}
+
+#loginQuoteText {
+    -fx-font-size: 15px;
 }
