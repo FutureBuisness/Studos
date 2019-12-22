@@ -34,7 +34,7 @@ public class LoginWindow extends Application {
 
     /**
      * Dunno what to do.
-     * @throws IOException y
+     * @throws IOException IOexception
      */
     @Override
     public void start(final Stage primaryStage) throws IOException {
