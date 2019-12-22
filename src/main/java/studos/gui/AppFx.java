@@ -16,7 +16,7 @@ import javafx.stage.Stage;
  */
 
 public class AppFx extends Application {
-    /*
+    /** 
          * Simple main.
          * @param args args for main.
           */

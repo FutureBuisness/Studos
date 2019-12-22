@@ -15,4 +15,5 @@ public final class GuiStarter {
     public static void main(final String[] args) {
         AppFx.main(args);
     }
+
 }
