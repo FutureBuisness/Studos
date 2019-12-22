@@ -38,7 +38,8 @@ public class AppFx extends Application {
     public void start(final Stage primaryStage) throws IOException {
         /**
          * Setting window properties.
-         * Title, setting resizable to false and removing context menu from window.
+         * Title, setting resizable to false
+         * and removing context menu from window.
         */
         primaryStage.setTitle("Studos - Okno logowania aplikacji");
         primaryStage.setResizable(false);
@@ -87,10 +88,16 @@ public class AppFx extends Application {
         });
 
         /**
-         * Setting scene with settings declared above and loading .css loginWindow file.
+         * Setting scene with settings declared above
+         * and loading .css loginWindow file.
         */
         Scene scene = new Scene(root, windowWidth, windowHeight);
-        scene.getStylesheets().add(getClass().getResource("view/loginWindow.css").toExternalForm());
+        scene.getStylesheets()
+        .add(getClass().getResource("view/loginWindow.css").toExternalForm());
+
+        /**
+         * Showing scene.
+        */
         primaryStage.setScene(scene);
         primaryStage.show();
     }
