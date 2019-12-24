@@ -16,6 +16,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import studos.logic.LoginLogic;
@@ -68,7 +69,6 @@ public class LoginWindow extends Application {
              new FXMLLoader(GuiStarter.class
              .getResource("view/loginWindow.fxml"));
         final Parent root = loader.load();
-
         final int windowHeight = 494;
         final int windowWidth = 1110;
 
@@ -87,6 +87,9 @@ public class LoginWindow extends Application {
         final PasswordField passwordText =
                   (PasswordField) loader.getNamespace()
                   .get("passwordTextField");
+        final Text loginMessageText =
+                  (Text) loader.getNamespace()
+                  .get("loginMessageText");
 
         /*
          * Window draggable method.
@@ -98,6 +101,7 @@ public class LoginWindow extends Application {
             public void handle(final MouseEvent event) {
                 xOffset = event.getSceneX();
                 yOffset = event.getSceneY();
+                root.requestFocus();
             }
 
         });
@@ -150,13 +154,15 @@ public class LoginWindow extends Application {
                  */
                 final LoginLogic loginLogic = new LoginLogic();
                 if (loginLogic.ifPlaceIsEmpty(username, password)) {
-                    System.out.println("Login: Username or password is empty.");
+                    loginMessageText
+                    .setText("Dane logowania nie zostały uzupełnione.");
                 } else {
                     if (loginLogic.ifInitialIsRight(username, password)) {
                         loginLogic.secondWindow(username, password);
                         primaryStage.close();
                     } else {
-                        System.out.println("Login: Credential are incorrect.");
+                        loginMessageText
+                        .setText("Nieprawidłowe dane logowania.");
                     }
                 }
             }

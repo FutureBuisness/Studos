@@ -115,3 +115,7 @@
 #englishLanguageButton:hover {
     -fx-cursor: hand;
 }
+
+#loginMessageText {
+    -fx-fill: red;
+}
