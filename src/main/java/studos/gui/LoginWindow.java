@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import studos.logic.LoginLogic;
@@ -32,6 +33,9 @@ public class LoginWindow extends Application {
     public static void main(final String[] args) {
         launch(args);
     }
+
+    private double xOffset = 0;
+    private double yOffset = 0;
 
     /**
      * Dunno what to do.
@@ -79,6 +83,30 @@ public class LoginWindow extends Application {
                   .get("passwordTextField");
 
         /*
+         * Window draggable method.
+         * This action will allow user to drag window.
+        */
+        root.setOnMousePressed(new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(final MouseEvent event) {
+                xOffset = event.getSceneX();
+                yOffset = event.getSceneY();
+            }
+
+        });
+
+        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(final MouseEvent event) {
+                primaryStage.setX(event.getScreenX() - xOffset);
+                primaryStage.setY(event.getScreenY() - yOffset);
+            }
+
+        });
+
+        /*
          * Window close button.
          * This action will close app window.
         */
@@ -114,12 +142,13 @@ public class LoginWindow extends Application {
                  * Function below is checking user credentials.
                  * (login function)
                  */
-                LoginLogic loginLogic = new LoginLogic();
+                final LoginLogic loginLogic = new LoginLogic();
                 if (loginLogic.ifPlaceIsEmpty(username, password)) {
                     System.out.println("Login: Username or password is empty.");
                 } else {
                     if (loginLogic.ifInitialIsRight(username, password)) {
                         loginLogic.secondWindow(username, password);
+                        primaryStage.close();
                     } else {
                         System.out.println("Login: Credential are incorrect.");
                     }
@@ -131,7 +160,7 @@ public class LoginWindow extends Application {
          * Setting scene with settings declared above
          * and loading .css loginWindow file.
         */
-        Scene scene = new Scene(root, windowWidth, windowHeight);
+        final Scene scene = new Scene(root, windowWidth, windowHeight);
         scene.getStylesheets()
                  .add(getClass()
                  .getResource("view/loginWindow.css").toExternalForm());
