@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import studos.logic.LoginLogic;
@@ -46,6 +47,9 @@ public class LoginWindow extends Application {
         primaryStage.setTitle("Studos - Okno logowania aplikacji");
         primaryStage.setResizable(false);
         primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.getIcons()
+            .add(new Image(getClass()
+            .getResourceAsStream("/loginWindow/logoIcon.png")));
 
         /*
          * loading controlls from .fxml file and setting size of window.
@@ -63,12 +67,38 @@ public class LoginWindow extends Application {
         */
         final Button loginButton =
                  (Button) loader.getNamespace().get("loginButton");
+        final Button minimalizeButton =
+                 (Button) loader.getNamespace().get("minimalizeButton");
+        final Button closeButton =
+                 (Button) loader.getNamespace().get("closeButton");
         final TextField usernameText =
                   (TextField) loader.getNamespace()
                   .get("usernameTextField");
         final PasswordField passwordText =
                   (PasswordField) loader.getNamespace()
                   .get("passwordTextField");
+
+        /*
+         * Window close button.
+         * This action will close app window.
+        */
+        closeButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(final ActionEvent e) {
+                primaryStage.close();
+            }
+        });
+
+        /*
+         * Window minimalize button.
+         * This action will minimalize app window.
+        */
+        minimalizeButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(final ActionEvent e) {
+                primaryStage.setIconified(true);
+            }
+        });
 
         /*
          * Button login execute.
