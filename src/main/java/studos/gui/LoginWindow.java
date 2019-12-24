@@ -34,7 +34,13 @@ public class LoginWindow extends Application {
         launch(args);
     }
 
+    /**
+     * Variable that store 'X' from login window position.
+     */
     private double xOffset = 0;
+    /**
+     * Variable that store 'Y' from login window position.
+     */
     private double yOffset = 0;
 
     /**
