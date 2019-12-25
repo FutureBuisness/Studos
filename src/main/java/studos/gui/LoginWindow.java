@@ -179,7 +179,9 @@ public class LoginWindow extends Application {
 
         /*
          * Showing scene.
+         * And controlled reset focus for window before start.
         */
+        root.requestFocus();
         primaryStage.setScene(scene);
         primaryStage.show();
     }
