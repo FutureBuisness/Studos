@@ -46,7 +46,6 @@
 #loginButton:hover {
     -fx-background-color: rgb(238, 2, 81);
     -fx-cursor: hand;
-
 }
 
 #loginHeader {
@@ -59,4 +58,64 @@
 
 #loginQuoteText {
     -fx-font-size: 15px;
+}
+
+#closeButton {
+    -fx-background-color: white ;
+    -fx-border-color: lightgrey;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-radius: 0;
+    -fx-background-size: 60%;
+    -fx-background-image: url("/loginWindow/closeIcon.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#closeButton:hover {
+    -fx-cursor: hand;
+    -fx-background-color: rgb(249, 249, 249);
+}
+
+#minimalizeButton {
+    -fx-background-color: white ;
+    -fx-border-color: lightgrey;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-radius: 0;
+    -fx-background-size: 60%;
+    -fx-background-image: url("/loginWindow/minimalizeIcon.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#minimalizeButton:hover {
+    -fx-cursor: hand;
+    -fx-background-color: rgb(249, 249, 249);
+}
+
+#polishLanguageButton {
+    -fx-background-radius: 0 ;
+    -fx-border-color: lightgrey;
+    -fx-border-width: 1 1 1 1;
+    -fx-background-image: url("/loginWindow/polish.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#polishLanguageButton:hover {
+    -fx-cursor: hand;
+}
+
+#englishLanguageButton {
+    
+    -fx-background-image: url("/loginWindow/english.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#englishLanguageButton:hover {
+    -fx-cursor: hand;
+}
+
+#loginMessageText {
+    -fx-fill: red;
 }
