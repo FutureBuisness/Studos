@@ -15,10 +15,10 @@
   <children>
     <AnchorPane id="loginWindow" fx:id="loginWindow" cache="true" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="1110.0" VBox.vgrow="ALWAYS">
       <children>
-            <TextField fx:id="usernameTextField" focusTraversable="false" layoutX="855.0" layoutY="173.0" prefHeight="33.0" prefWidth="234.0" promptText="Użytkownik" />
-            <PasswordField fx:id="passwordTextField" focusTraversable="false" layoutX="855.0" layoutY="231.0" prefHeight="33.0" prefWidth="234.0" promptText="Hasło" />
+            <TextField fx:id="usernameTextField" layoutX="855.0" layoutY="173.0" prefHeight="33.0" prefWidth="234.0" promptText="Użytkownik" />
+            <PasswordField fx:id="passwordTextField" layoutX="855.0" layoutY="231.0" prefHeight="33.0" prefWidth="234.0" promptText="Hasło" />
             <CheckBox fx:id="rememberMeCheckbox" disable="true" layoutX="858.0" layoutY="328.0" mnemonicParsing="false" text="Zapamiętaj mnie" />
-            <Button fx:id="loginButton" layoutX="855.0" layoutY="355.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="234.0" text="Zaloguj" />
+            <Button fx:id="loginButton" layoutX="855.0" layoutY="355.0" mnemonicParsing="true" prefHeight="33.0" prefWidth="234.0" text="Zaloguj" />
             <ImageView fitHeight="730.0" fitWidth="790.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="/loginWindow/loginWindowBackground.jpg" />
@@ -50,10 +50,11 @@
                   <Image url="/loginWindow/logoIcon.png" />
                </image>
             </ImageView>
-            <Button fx:id="closeButton" layoutX="1065.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" />
-            <Button fx:id="minimalizeButton" layoutX="1020.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" />
+            <Button fx:id="closeButton" focusTraversable="false" layoutX="1065.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" />
+            <Button fx:id="minimalizeButton" focusTraversable="false" layoutX="1020.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" />
             <Button fx:id="polishLanguageButton" layoutX="913.0" layoutY="421.0" maxHeight="17.0" maxWidth="33.0" minHeight="17.0" minWidth="33.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="33.0" />
             <Button fx:id="englishLanguageButton" layoutX="990.0" layoutY="421.0" maxHeight="17.0" maxWidth="33.0" minHeight="17.0" minWidth="33.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="33.0" />
+            <Text fx:id="loginMessageText" layoutX="855.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="234.0" />
       </children>
     </AnchorPane>
   </children>
