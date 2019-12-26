@@ -165,6 +165,7 @@ public class LoginWindow extends Application {
                         .setText("Nieprawidłowe dane logowania.");
                     }
                 }
+                loginButton.requestFocus();
             }
         });
 

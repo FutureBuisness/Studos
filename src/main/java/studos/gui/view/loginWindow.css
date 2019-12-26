@@ -62,7 +62,7 @@
 
 #closeButton {
     -fx-background-color: white ;
-    -fx-border-color: lightgrey;
+    -fx-border-color: whitesmoke;
     -fx-border-width: 0 0 1 0;
     -fx-background-radius: 0;
     -fx-background-size: 60%;
@@ -76,9 +76,25 @@
     -fx-background-color: rgb(249, 249, 249);
 }
 
+#settingsButton {
+    -fx-background-color: white ;
+    -fx-border-color: whitesmoke;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-radius: 0;
+    -fx-background-size: 60%;
+    -fx-background-image: url("/loginWindow/settingsIcon.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#settingsButton:hover {
+    -fx-cursor: hand;
+    -fx-background-color: rgb(249, 249, 249);
+}
+
 #minimalizeButton {
     -fx-background-color: white ;
-    -fx-border-color: lightgrey;
+    -fx-border-color: whitesmoke;
     -fx-border-width: 0 0 1 0;
     -fx-background-radius: 0;
     -fx-background-size: 60%;
@@ -94,7 +110,7 @@
 
 #polishLanguageButton {
     -fx-background-radius: 0 ;
-    -fx-border-color: lightgrey;
+    -fx-border-color: whitesmoke;
     -fx-border-width: 1 1 1 1;
     -fx-background-image: url("/loginWindow/polish.png");
     -fx-background-repeat: no-repeat;
