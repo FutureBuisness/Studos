@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+
 /**
  * Back end from Oleg.
  */
@@ -20,7 +21,6 @@ public class LoginLogic {
      * It's a boolean for all method.
      */
     private boolean checkIt;
-
     /**
      * This method return if the iput data is right.
      *true If it is right.
