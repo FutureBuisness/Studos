@@ -45,7 +45,7 @@ public class LoginWindow extends Application {
      */
     private double yOffset = 0;
     /**
-     * Dunno what to do.
+     * Method that runs front-end of login window.
      * @throws IOException IOexception
      */
     @Override
@@ -93,7 +93,7 @@ public class LoginWindow extends Application {
                   .get("loginMessageText");
         final CheckBox rememberCheckBox =
                     (CheckBox) loader.getNamespace().get("rememberMeCheckbox");
-
+        //Todo - to backend file
         if (UserConfigReader.getRememberMeStatus()) {
             if (!UserConfigReader.getUsername().isEmpty()
                 && UserConfigReader.getUsername() != null
@@ -101,10 +101,9 @@ public class LoginWindow extends Application {
                 && UserConfigReader.getPassword() != null) {
                 try {
                     rememberCheckBox.setSelected(true);
-                    usernameText.setText(UserConfigReader.getPassword());
+                    usernameText.setText(UserConfigReader.getUsername());
                     passwordText.setText(UserConfigReader.getPassword());
                 } catch (final Exception e) {
-                    e.printStackTrace();
                 }
             }
         }
