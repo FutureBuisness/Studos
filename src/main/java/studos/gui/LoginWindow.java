@@ -94,18 +94,13 @@ public class LoginWindow extends Application {
         final CheckBox rememberCheckBox =
                     (CheckBox) loader.getNamespace().get("rememberMeCheckbox");
         //Todo - to backend file
-        if (UserConfigReader.getRememberMeStatus()) {
-            if (!UserConfigReader.getUsername().isEmpty()
-                && UserConfigReader.getUsername() != null
-                && !UserConfigReader.getPassword().isEmpty()
-                && UserConfigReader.getPassword() != null) {
+        if (UserConfigReader.ifDataIsReady()) {
                 try {
                     rememberCheckBox.setSelected(true);
                     usernameText.setText(UserConfigReader.getUsername());
                     passwordText.setText(UserConfigReader.getPassword());
                 } catch (final Exception e) {
                 }
-            }
         }
         /*
          * Window draggable method.

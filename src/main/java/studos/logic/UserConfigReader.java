@@ -98,6 +98,23 @@ private UserConfigReader() {
   }
 
 /**
+ * This method is checking if userData config has
+ * complete login data to be used by application.
+ * Boolean is simplified.
+ * @return true if there is data to be loaded.
+ * false if there is no data to be loaded.
+*/
+  public static boolean ifDataIsReady() {
+    if (rememberMe) {
+      return !usernameString.isEmpty()
+          && usernameString != null
+          && !passwordString.isEmpty()
+          && passwordString != null;
+    } else {
+      return false;
+    }
+  }
+/**
  * This method is checking if there is actually existed
  * config file that we can read and have more than 0 chars.
  * If there is then file is deleted.
