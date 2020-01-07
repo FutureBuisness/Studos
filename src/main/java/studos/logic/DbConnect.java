@@ -33,7 +33,7 @@ public class DbConnect {
  * DbConnect shit.
  */
   public DbConnect() {
-    jdbcDbUrl = System.getenv("JDBC_DATABASE_URL");
+    jdbcDbUrl = System.getenv("DATABASE_URL");
     if (null != jdbcDbUrl) {
       jdbcUrlSettings.put("hibernate.connection.url", jdbcDbUrl);
       this.registry = new StandardServiceRegistryBuilder().
