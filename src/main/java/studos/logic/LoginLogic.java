@@ -4,12 +4,7 @@
 
 package studos.logic;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
+import studos.gui.MainWindow;
 
 
 /**
@@ -29,6 +24,7 @@ public class LoginLogic {
      *@param password just password.
      *@return boolean
      */
+
     public boolean ifInitialIsRight(final String username,
                                     final String password) {
         if (username.equals("admin") && password.equals("admin")) {
@@ -67,25 +63,8 @@ public class LoginLogic {
 
     public void secondWindow(final String username, final String password) {
         if (ifInitialIsRight(username, password)) {
-            final Stage primaryStage = new Stage();
-            primaryStage.setTitle("Hello World!");
-            final Button btn = new Button();
-            btn.setText("Say 'Hello World'");
-            btn.setOnAction(new EventHandler<ActionEvent>() {
-
-                @Override
-                public void handle(final ActionEvent event) {
-                    System.out.println("Hello World!");
-                }
-            });
-            final int windowHeight = 300;
-            final int windowWidth = 250;
-
-            final StackPane root = new StackPane();
-            root.getChildren().add(btn);
-            primaryStage.setScene(new Scene(root, windowHeight, windowWidth));
-            primaryStage.show();
+            MainWindow newWindow = new MainWindow();
+            newWindow.mainWindow();
         }
-
     }
 }

@@ -39,6 +39,7 @@ public class LoginWindow extends Application {
     /**
      * Variable that store 'X' from login window position.
      */
+
     private double xOffset = 0;
     /**
      * Variable that store 'Y' from login window position.
@@ -48,9 +49,10 @@ public class LoginWindow extends Application {
      * Method that runs front-end of login window.
      * @throws IOException IOexception
      */
+
     @Override
     public void start(final Stage primaryStage) throws IOException {
-         /*
+        /*
          * Shearch for userData.config file and if it exists
          * and it's readable then reads data from last sucessfuly login.
         */
@@ -95,12 +97,13 @@ public class LoginWindow extends Application {
                     (CheckBox) loader.getNamespace().get("rememberMeCheckbox");
         //Todo - to backend file
         if (UserConfigReader.ifDataIsReady()) {
-                try {
-                    rememberCheckBox.setSelected(true);
-                    usernameText.setText(UserConfigReader.getUsername());
-                    passwordText.setText(UserConfigReader.getPassword());
-                } catch (final Exception e) {
-                }
+            try {
+                rememberCheckBox.setSelected(true);
+                usernameText.setText(UserConfigReader.getUsername());
+                passwordText.setText(UserConfigReader.getPassword());
+            } catch (final Exception e) {
+                e.getMessage();
+            }
         }
         /*
          * Window draggable method.
@@ -163,7 +166,7 @@ public class LoginWindow extends Application {
                         loginLogic.secondWindow(username, password);
                         if (rememberCheckBox.isSelected()) {
                             UserConfigReader.saveUserData(usernameText
-                            .getText(), passwordText.getText(), "");
+                                 .getText(), passwordText.getText(), "");
                         } else {
                             UserConfigReader.deleteUserData();
                         }

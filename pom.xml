@@ -20,7 +20,7 @@
   </properties>
 
     <dependencies>
-
+      
       <dependency>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-controls</artifactId>
@@ -132,6 +132,7 @@
                 <mainClass>org.openjfx.App</mainClass>
             </configuration>
         </plugin>
+
       </plugins>
     </pluginManagement>
   </build>
