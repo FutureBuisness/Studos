@@ -102,8 +102,7 @@ public class LoginWindow extends Application {
                 usernameText.setText(UserConfigReader.getUsername());
                 passwordText.setText(UserConfigReader.getPassword());
             } catch (final Exception e) {
-                e.getMessage();
-            }
+              }
         }
         /*
          * Window draggable method.
