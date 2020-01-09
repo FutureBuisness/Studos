@@ -20,6 +20,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import studos.logic.AppLanguage;
 import studos.logic.LoginLogic;
 import studos.logic.UserConfigReader;
 
@@ -57,6 +58,7 @@ public class LoginWindow extends Application {
          * and it's readable then reads data from last sucessfuly login.
         */
         UserConfigReader.readUserData();
+        AppLanguage.languageInitialization();
         /*
          * Setting window properties.
          * Title, setting resizable to false
