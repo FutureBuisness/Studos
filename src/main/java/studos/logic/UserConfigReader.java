@@ -109,7 +109,9 @@ private UserConfigReader() {
       return !usernameString.isEmpty()
           && usernameString != null
           && !passwordString.isEmpty()
-          && passwordString != null;
+          && passwordString != null
+          && !languageString.isEmpty()
+          && languageString != null;
     } else {
       return false;
     }
@@ -161,7 +163,7 @@ private UserConfigReader() {
 
       // language
       final Element language = document.createElement("language");
-      language.appendChild(document.createTextNode("polish"));
+      language.appendChild(document.createTextNode("pl"));
       root.appendChild(language);
 
       // create the xml file
