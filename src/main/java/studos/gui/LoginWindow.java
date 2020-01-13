@@ -5,6 +5,9 @@
 package studos.gui;
 
 import java.io.IOException;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -58,7 +61,6 @@ public class LoginWindow extends Application {
          * and it's readable then reads data from last sucessfuly login.
         */
         UserConfigReader.readUserData();
-        AppLanguage.languageInitialization();
         /*
          * Setting window properties.
          * Title, setting resizable to false
@@ -74,7 +76,10 @@ public class LoginWindow extends Application {
         // Loading controlls from .fxml file and setting size of window.
         final FXMLLoader loader =
              new FXMLLoader(GuiStarter.class
-             .getResource("view/loginWindow.fxml"));
+               .getResource("view/loginWindow.fxml"), AppLanguage.loadLang());
+
+        loader.setResources(AppLanguage.loadLang());
+
         final Parent root = loader.load();
         final int windowHeight = 494;
         final int windowWidth = 1110;
@@ -174,7 +179,7 @@ public class LoginWindow extends Application {
                         primaryStage.close();
                     } else {
                         loginMessageText
-                        .setText("Nieprawidłowe dane logowania.");
+                        .setText(AppLanguage.getStBundle("loginAttention"));
                     }
                 }
                 loginButton.requestFocus();

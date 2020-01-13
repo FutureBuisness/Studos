@@ -1,6 +1,12 @@
 package studos.logic;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
+import java.util.ResourceBundle;
+
+import studos.logic.UserConfigReader;
 
 /**
  * Back-end language controlling class. Ok... this class will be responsible for
@@ -19,7 +25,7 @@ public final class AppLanguage {
     /**
      * Variable that stores choosed language - TODO.
     */
-    private static String choosedLanguage = "";
+    private static String choosedLanguage = "en";
 
     /**
     * This method is checking if there is definied language variable
@@ -27,13 +33,14 @@ public final class AppLanguage {
     * @return true if there is there is definied language.
     * false if there is no definied language.
     */
+    
     private static boolean languageReadFromConfig() {
         if (UserConfigReader.ifDataIsReady()) {
             String tempChoosedLanguage = UserConfigReader.getLanguage();
             return !tempChoosedLanguage.isEmpty()
                 && tempChoosedLanguage != null
                 && tempChoosedLanguage.equals("pl")
-                || tempChoosedLanguage.equals("ang");
+                || tempChoosedLanguage.equals("en");
         } else {
             return false;
         }
@@ -46,26 +53,41 @@ public final class AppLanguage {
     * Otherwise we take language from system
     * or use default.
     */
-    public static void languageInitialization() {
+    private static String languageInitialization() {
         if (languageReadFromConfig()) {
             //If we can read variable from config file
-            choosedLanguage = UserConfigReader.getLanguage();
+            return choosedLanguage = UserConfigReader.getLanguage();
         } else {
             // here download default system language
             Locale currentLocale = Locale.getDefault();
             if (currentLocale.getLanguage().equals("pl")) {
                 //If language is polish
-                choosedLanguage = "pl";
+                return choosedLanguage = "pl";
             } else {
                 if (currentLocale.getLanguage().equals("en")) {
                     //If language is english
-                    choosedLanguage = "en";
+                    return choosedLanguage = "en";
                 } else {
                     //If other language then use hardcoded
-                    choosedLanguage = "en";
+                    return choosedLanguage = "en";
                 }
+            }
         }
     }
-}
+    /**
+     * this is something.
+     */
+
+    public static ResourceBundle loadLang() {
+        Locale locale = new Locale(choosedLanguage);
+        ResourceBundle bundle = ResourceBundle
+            .getBundle("studos.languge.messages", locale);
+        return bundle;
+    }
+
+    public static String getStBundle(String name) {
+        return loadLang().getString(name);
+    }
+
 }
 

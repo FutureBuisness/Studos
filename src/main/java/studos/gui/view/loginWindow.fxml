@@ -15,7 +15,7 @@
   <children>
     <AnchorPane id="loginWindow" fx:id="loginWindow" cache="true" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="1110.0" VBox.vgrow="ALWAYS">
       <children>
-            <TextField fx:id="usernameTextField" layoutX="855.0" layoutY="173.0" prefHeight="33.0" prefWidth="234.0" promptText="Użytkownik" />
+            <TextField fx:id="usernameTextField" layoutX="855.0" layoutY="173.0" prefHeight="33.0" prefWidth="234.0" promptText="%name" />
             <PasswordField fx:id="passwordTextField" layoutX="855.0" layoutY="231.0" prefHeight="33.0" prefWidth="234.0" promptText="Hasło" />
             <CheckBox fx:id="rememberMeCheckbox" layoutX="858.0" layoutY="328.0" mnemonicParsing="false" text="Zapamiętaj mnie" />
             <Button fx:id="loginButton" layoutX="855.0" layoutY="355.0" mnemonicParsing="true" prefHeight="33.0" prefWidth="234.0" text="Zaloguj" />
