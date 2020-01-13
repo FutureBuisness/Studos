@@ -33,10 +33,26 @@ public final class AppLanguage {
             return !tempChoosedLanguage.isEmpty()
                 && tempChoosedLanguage != null
                 && tempChoosedLanguage.equals("pl")
-                || tempChoosedLanguage.equals("ang");
+                || tempChoosedLanguage.equals("en");
         } else {
             return false;
         }
+    }
+
+    /**
+    * This method returns app choosed language.
+    * @return variable that stores app language.
+    */
+    public static String getLanguage() {
+        return choosedLanguage;
+    }
+
+    /**
+    * This method sets a app language.
+    * @param language overwritte choosed app language.
+    */
+    public static void setLanguage(final String language) {
+        choosedLanguage = language;
     }
 
     /**

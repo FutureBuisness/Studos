@@ -1,3 +1,5 @@
+.root {-fx-focus-color: -fx-control-inner-background ; -fx-faint-focus-color: -fx-control-inner-background ;}
+
 #loginWindow {
     -fx-background-color:white;
 }
@@ -117,15 +119,27 @@
     -fx-background-position: center;
 }
 
+#polishLanguageButton:selected {
+    -fx-border-width: 2 2 2 2;
+    -fx-border-color: lightblue;
+}
+
 #polishLanguageButton:hover {
     -fx-cursor: hand;
 }
 
 #englishLanguageButton {
-    
+    -fx-background-radius: 0 ;
+    -fx-border-color: whitesmoke;
+    -fx-border-width: 1 1 1 1;
     -fx-background-image: url("/loginWindow/english.png");
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
+}
+
+#englishLanguageButton:selected {
+    -fx-border-width: 2 2 2 2;
+    -fx-border-color: lightblue;
 }
 
 #englishLanguageButton:hover {
@@ -134,4 +148,12 @@
 
 #loginMessageText {
     -fx-fill: red;
+}
+
+#rememberMeCheckbox .box {
+    -fx-background-color: lightgrey;
+}
+
+#rememberMeCheckbox:hover {
+    -fx-cursor: hand;
 }
