@@ -47,6 +47,22 @@ public final class AppLanguage {
     }
 
     /**
+    * This method returns app choosed language.
+    * @return variable that stores app language.
+    */
+    public static String getLanguage() {
+        return choosedLanguage;
+    }
+
+    /**
+    * This method sets a app language.
+    * @param language overwritte choosed app language.
+    */
+    public static void setLanguage(final String language) {
+        choosedLanguage = language;
+    }
+
+    /**
     * This method is defining choosed language.
     * 1. Method is checking if in config file is language variable.
     * 2. Method is checking if we can read variable.

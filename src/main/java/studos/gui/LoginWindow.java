@@ -9,18 +9,10 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import studos.logic.AppLanguage;
@@ -40,15 +32,7 @@ public class LoginWindow extends Application {
     public static void main(final String[] args) {
         launch(args);
     }
-    /**
-     * Variable that store 'X' from login window position.
-     */
 
-    private double xOffset = 0;
-    /**
-     * Variable that store 'Y' from login window position.
-     */
-    private double yOffset = 0;
     /**
      * Method that runs front-end of login window.
      * @throws IOException IOexception
@@ -62,8 +46,7 @@ public class LoginWindow extends Application {
         */
         UserConfigReader.readUserData();
         /*
-         * Setting window properties.
-         * Title, setting resizable to false
+         * Setting window properties. Title, setting resizable to false
          * and removing context menu from window.
         */
         primaryStage.setTitle("Studos - Okno logowania aplikacji");
@@ -72,7 +55,6 @@ public class LoginWindow extends Application {
         primaryStage.getIcons()
             .add(new Image(getClass()
             .getResourceAsStream("/loginWindow/logoIcon.png")));
-
         // Loading controlls from .fxml file and setting size of window.
         final FXMLLoader loader =
              new FXMLLoader(GuiStarter.class
@@ -84,6 +66,7 @@ public class LoginWindow extends Application {
         final int windowHeight = 494;
         final int windowWidth = 1110;
 
+<<<<<<< HEAD
         // Creating variables from content in front-end controlls.
         final Button loginButton =
                  (Button) loader.getNamespace().get("loginButton");
@@ -185,6 +168,12 @@ public class LoginWindow extends Application {
                 loginButton.requestFocus();
             }
         });
+=======
+        // Temporary method that stores controlls
+        // and handle controlls actions
+        LoginLogic.controlls(loader, root, primaryStage);
+
+>>>>>>> 681a5a2ba090e97f28d7b5a5739a2eb1d925d38f
         /*
          * Setting scene with settings declared above
          * and loading .css loginWindow file.
