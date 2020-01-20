@@ -31,10 +31,11 @@ public final class GuiStarter {
         getSingleResult();
         System.out.println(result);
 
+        session.getTransaction().begin();
         final LoginClass log = new LoginClass("admin", "admin");
 
         session.save(log);
-
+        
         session.getTransaction().commit();
         session.close();
 
