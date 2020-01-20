@@ -33,11 +33,13 @@ public final class GuiStarter {
 
         session.getTransaction().begin();
         final LoginClass log = new LoginClass("admin", "admin");
-
+        System.out.println("dupa");
         session.save(log);
-        
+        System.out.println("dupa2");
         session.getTransaction().commit();
+        System.out.println("dupa3");
         session.close();
+        System.out.println("dupa4");
 
 
 
