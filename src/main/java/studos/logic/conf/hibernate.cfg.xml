@@ -6,7 +6,7 @@
 <hibernate-configuration>
   <session-factory>
     <property name="show_sql">true</property>
-    <property name="hbm2ddl.auto">update</property>
+    <property name="hbm2ddl.auto">create</property>
     <mapping class="studos.logic.LoginClass"></mapping>
     <mapping class="studos.logic.Human"></mapping>
   </session-factory>
