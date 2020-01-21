@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -17,6 +18,7 @@ public class LoginClass {
     /**
      * lenght for chars in the table for login and password.
      */
+    @Transient
     private final int lenght = 20;
     /**
      * unique login id.
@@ -28,18 +30,21 @@ public class LoginClass {
     /**
      * unique login of the account.
      */
-    @SuppressWarnings("magicnumber")
     @Column(name = "LOGIN", unique = true, nullable = false,
     length = lenght)
     private String login;
     /**
      * unique password of the account.
      */
-    @SuppressWarnings("checkstyle:magicnumber")
     @Column(name = "PASSWORD", unique = false, nullable = false,
     length = lenght)
     private String password;
 
+    /**
+     * unique e-mail adress of the account.
+     */
+    @Column(name = "EMAIL", unique = true, nullable = false)
+    private String email;
     /**
      * Deflaut constructor.
      */
@@ -51,10 +56,31 @@ public class LoginClass {
      * Creates a new instance of Account.
      * @param login1 login.
      * @param password1 password.
+     * @param email1 email.
      */
-    public LoginClass(final String login1, final String password1) {
+    public LoginClass(final String login1,
+    final String password1,
+    final String email1) {
         this.login = login1;
         this.password = password1;
+        this.email = email1;
+    }
+
+    /**
+     * Gets the E-mail of this account.
+     *
+     * @return email.
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Sets the E-mail of this account.
+     * @param email1 e-mail of the account.
+     */
+    public void setEmail(final String email1) {
+        this.email = email1;
     }
 
     /**

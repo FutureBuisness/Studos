@@ -232,7 +232,6 @@ public class LoginLogic {
      * Here is should be a new window.
      * @param username just username
      * @param password just password
-     *
      */
 
     public void secondWindow(final String username, final String password) {

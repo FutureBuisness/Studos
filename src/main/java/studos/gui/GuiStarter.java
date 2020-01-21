@@ -32,16 +32,12 @@ public final class GuiStarter {
         System.out.println(result);
 
         session.getTransaction().begin();
-        final LoginClass log = new LoginClass("admin", "admin");
-        System.out.println("dupa");
+        final LoginClass log = new LoginClass("Oleg",
+        "Oleg",
+        "Oleg@admin.com");
         session.save(log);
-        System.out.println("dupa2");
         session.getTransaction().commit();
-        System.out.println("dupa3");
         session.close();
-        System.out.println("dupa4");
-
-
 
         LoginWindow.main(args);
     }
