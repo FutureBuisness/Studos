@@ -61,8 +61,17 @@ public final class I18N {
      * @return List of Locale objects.
      */
     public static List<Locale> getSupportedLocales() {
-        return new ArrayList<>(Arrays.asList(Locale.forLanguageTag("en"),
-         Locale.forLanguageTag("pl")));
+        return new ArrayList<>(Arrays.asList(Locale.forLanguageTag("pl-PL"),
+        Locale.forLanguageTag("en-US")));
+    }
+
+    /**
+     * UserConfigReader which correct locale.
+     * @return Locale
+     */
+    public static Locale getChangeLocale() {
+        return UserConfigReader.getLanguage().equals("pl")
+            ? Locale.forLanguageTag("pl-PL") : Locale.forLanguageTag("en-US");
     }
 
     /**
@@ -72,12 +81,10 @@ public final class I18N {
      *     if contained in the supported locales, english otherwise.
      */
     public static Locale getDefaultLocale() {
-        Locale sysDefault = Locale.getDefault();
-        if (languageReadFromConfig()) {
-            sysDefault = Locale.forLanguageTag(UserConfigReader.getLanguage());
-        }
+        Locale sysDefault = languageReadFromConfig()
+            ? getChangeLocale() : Locale.getDefault();
         return getSupportedLocales()
-            .contains(sysDefault) ? sysDefault : Locale.forLanguageTag("en");
+            .contains(sysDefault) ? sysDefault : Locale.forLanguageTag("en-US");
     }
 
     /**
@@ -94,7 +101,7 @@ public final class I18N {
      */
 
     public static String getLanguage() {
-        return getLocale().toString();
+        return getLocale().getLanguage();
     }
 
     /**
@@ -130,7 +137,7 @@ public final class I18N {
      */
     public static String get(final String key, final Object... args) {
         final ResourceBundle bundle = ResourceBundle
-            .getBundle("studos.languge.messages", getLocale());
+            .getBundle("studos.languages.messages", getLocale());
         return MessageFormat.format(bundle.getString(key), args);
     }
 
