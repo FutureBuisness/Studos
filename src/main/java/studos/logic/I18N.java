@@ -61,17 +61,8 @@ public final class I18N {
      * @return List of Locale objects.
      */
     public static List<Locale> getSupportedLocales() {
-        return new ArrayList<>(Arrays.asList(Locale.forLanguageTag("pl-PL"),
-        Locale.forLanguageTag("en-US")));
-    }
-
-    /**
-     * UserConfigReader which correct locale.
-     * @return Locale
-     */
-    public static Locale getChangeLocale() {
-        return UserConfigReader.getLanguage().equals("pl")
-            ? Locale.forLanguageTag("pl-PL") : Locale.forLanguageTag("en-US");
+        return new ArrayList<>(Arrays.asList(Locale.forLanguageTag("pl"),
+        Locale.forLanguageTag("en")));
     }
 
     /**
@@ -81,10 +72,21 @@ public final class I18N {
      *     if contained in the supported locales, english otherwise.
      */
     public static Locale getDefaultLocale() {
+        /*
+         * return userData if true.
+         */
         Locale sysDefault = languageReadFromConfig()
-            ? getChangeLocale() : Locale.getDefault();
+            ? Locale.forLanguageTag(UserConfigReader.getLanguage())
+            : Locale.getDefault();
+        /*
+         * Change Locale from full format to language.
+         */
+        sysDefault =
+            sysDefault.getLanguage().equals(new Locale("pl-PL").getLanguage())
+            || sysDefault.getLanguage().equals(new Locale("pl").getLanguage())
+            ? Locale.forLanguageTag("pl") : Locale.forLanguageTag("en");
         return getSupportedLocales()
-            .contains(sysDefault) ? sysDefault : Locale.forLanguageTag("en-US");
+            .contains(sysDefault) ? sysDefault : Locale.forLanguageTag("en");
     }
 
     /**
