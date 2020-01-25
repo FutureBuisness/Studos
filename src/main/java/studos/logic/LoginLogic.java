@@ -23,6 +23,12 @@ import studos.gui.MainWindow;
  */
 public class LoginLogic {
 
+    static LoginClass log = new LoginClass();
+    final static String username = log.getLogin(); 
+    final static String password = log.getPassword();
+
+    
+
     /**
      * It's a boolean for all method.
      */
@@ -38,14 +44,15 @@ public class LoginLogic {
     private static double yOffset = 0;
 
     /**
-     * This method return if the iput data is right.
+     * This method return if the input data is right.
      * @param username just username.
      * @param password just password.
-     * @return True If it is right, false if it's not.
+     * @return True if it is right, false if it's not.
      */
+
     public boolean ifInitialIsRight(
-        final String username, final String password) {
-        if (username.equals("admin") && password.equals("admin")) {
+        String username, String password) {
+        if (username.equals(log.getLogin()) && password.equals(log.getPassword())) {
             checkIt = true;
         } else {
             checkIt = false;
@@ -104,6 +111,7 @@ public class LoginLogic {
             } catch (final Exception e) {
             }
         }
+        System.out.println(username + " " + password);
 
         // Only event handlers above
         /*
