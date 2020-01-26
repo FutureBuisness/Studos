@@ -129,21 +129,21 @@ public class LoginLogic {
          *  from method I18N.
          */
         usernameText.promptTextProperty()
-            .bind(I18N.createStringBinding("user.Name"));
+            .bind(I18N.createStringBinding("username.Textfield"));
         passwordText.promptTextProperty()
-            .bind(I18N.createStringBinding("password"));
+            .bind(I18N.createStringBinding("password.Textfield"));
         loginButton.textProperty()
             .bind(I18N.createStringBinding("login.Button"));
         rememberCheckBox.textProperty()
-            .bind(I18N.createStringBinding("remember.checkBox"));
+            .bind(I18N.createStringBinding("remember.CheckBox"));
         textWelcome.textProperty()
-            .bind(I18N.createStringBinding("Welcome.Text"));
+            .bind(I18N.createStringBinding("welcome.Text"));
         textLog.textProperty()
-            .bind(I18N.createStringBinding("login.Text"));
+            .bind(I18N.createStringBinding("loginToUseApp.Text"));
         textQuote.textProperty()
-            .bind(I18N.createStringBinding("quote.Text"));
+            .bind(I18N.createStringBinding("loginQuote.Text"));
         textRights.textProperty()
-            .bind(I18N.createStringBinding("login.Rights"));
+            .bind(I18N.createStringBinding("loginRights.Text"));
 
         if (I18N.getDefaultLocale().getLanguage().equals("pl")) {
             polishLanguageButton.setSelected(true);
@@ -191,7 +191,7 @@ public class LoginLogic {
             final LoginLogic loginLogic = new LoginLogic();
             if (loginLogic.ifPlaceIsEmpty(username, password)) {
                 loginMessageText.textProperty()
-                        .bind(I18N.createStringBinding("empty.placeholders"));
+                        .bind(I18N.createStringBinding("emptyLoginData.Text"));
             } else {
                 if (loginLogic.ifInitialIsRight(username, password)) {
                     loginLogic.secondWindow(username, password);
@@ -204,7 +204,8 @@ public class LoginLogic {
                     primaryStage.close();
                 } else {
                     loginMessageText.textProperty()
-                            .bind(I18N.createStringBinding("invalid.Data"));
+                        .bind(I18N.createStringBinding(
+                        "invalidLoginData.Text"));
                 }
             }
             loginButton.requestFocus();
