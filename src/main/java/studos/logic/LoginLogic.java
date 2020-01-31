@@ -157,7 +157,7 @@ public class LoginLogic {
         polishLanguageButton.setOnAction(e -> {
             root.requestFocus();
             polishLanguageButton.setSelected(true);
-            I18N.setLocale(Locale.forLanguageTag("pl-PL"));
+            I18N.setLocale(Locale.forLanguageTag("pl"));
         });
 
         /*
