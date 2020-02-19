@@ -17,19 +17,19 @@
   <children>
     <AnchorPane id="loginWindow" fx:id="loginWindow" cache="true" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="1110.0" VBox.vgrow="ALWAYS">
       <children>
-            <TextField fx:id="usernameTextField" layoutX="855.0" layoutY="173.0" prefHeight="33.0" prefWidth="234.0" promptText="Użytkownik" />
-            <PasswordField fx:id="passwordTextField" layoutX="855.0" layoutY="231.0" prefHeight="33.0" prefWidth="234.0" promptText="Hasło" />
-            <CheckBox fx:id="rememberMeCheckbox" layoutX="858.0" layoutY="328.0" mnemonicParsing="false" text="Zapamiętaj mnie" />
-            <Button fx:id="loginButton" layoutX="855.0" layoutY="355.0" mnemonicParsing="true" prefHeight="33.0" prefWidth="234.0" text="Zaloguj" />
+            <TextField fx:id="usernameTextField" layoutX="855.0" layoutY="173.0" prefHeight="33.0" prefWidth="234.0" />
+            <PasswordField fx:id="passwordTextField" layoutX="855.0" layoutY="231.0" prefHeight="33.0" prefWidth="234.0" />
+            <CheckBox fx:id="rememberMeCheckbox" layoutX="858.0" layoutY="328.0" mnemonicParsing="false" />
+            <Button fx:id="loginButton" layoutX="855.0" layoutY="355.0" mnemonicParsing="true" prefHeight="33.0" prefWidth="234.0" />
             <ImageView fitHeight="730.0" fitWidth="790.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="/loginWindow/loginWindowBackground.jpg" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="287.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wszystkie prawa zastrzeżone przez FutureBusiness" wrappingWidth="291.13671875" />
-            <Text fx:id="loginQuoteText" fill="WHITE" layoutX="100.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Ulepszać duszę nauką, aby posuwać się przed siebie i pozostawić wszystko, albowiem dusza jest domem wszystkiego. Zaiste dusza jest naczyniem, zaś nauka – kagankiem, a mądrość ludzka – oliwą.&quot; ~ Awicenna " wrappingWidth="440.6015625" />
-            <Text fx:id="loginSmallHeader" fill="WHITE" layoutX="100.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zaloguj się, aby przejść do aplikacji Studos" wrappingWidth="394.6015625" />
-            <Text fx:id="loginHeader" fill="WHITE" layoutX="100.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Witamy" wrappingWidth="291.13671875" />
+            <Text fx:id="loginRights" fill="WHITE" layoutX="287.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="291.13671875" />
+            <Text fx:id="loginQuoteText" fill="WHITE" layoutX="100.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="440.6015625" />
+            <Text fx:id="loginSmallHeader" fill="WHITE" layoutX="100.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="394.6015625" />
+            <Text fx:id="loginHeader" fill="WHITE" layoutX="100.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0"  wrappingWidth="291.13671875" />
             <Text fx:id="applicationNameText" layoutX="855.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Studos" wrappingWidth="149.0">
                <font>
                   <Font size="45.0" />

@@ -1,9 +1,10 @@
-/*
+/**
  * Info about this package doing something for package-info.java file.
  */
 
 package studos.logic;
 
+import java.util.Locale;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import studos.gui.MainWindow;
+
 
 /**
  * Back end from Oleg.
@@ -68,7 +70,6 @@ public class LoginLogic {
      */
     public static void controlls(
         final FXMLLoader loader, final Parent root, final Stage primaryStage) {
-
         // Creating variables from content in front-end controlls.
         final Button loginButton =
              (Button) loader.getNamespace().get("loginButton");
@@ -77,31 +78,25 @@ public class LoginLogic {
         final Button closeButton =
              (Button) loader.getNamespace().get("closeButton");
         final ToggleButton polishLanguageButton =
-             (ToggleButton) loader.getNamespace()
-            .get("polishLanguageButton");
+             (ToggleButton) loader.getNamespace().get("polishLanguageButton");
         final ToggleButton englishLanguageButton =
-             (ToggleButton) loader.getNamespace()
-             .get("englishLanguageButton");
+             (ToggleButton) loader.getNamespace().get("englishLanguageButton");
         final TextField usernameText =
-             (TextField) loader.getNamespace()
-             .get("usernameTextField");
+             (TextField) loader.getNamespace().get("usernameTextField");
         final PasswordField passwordText =
-             (PasswordField) loader.getNamespace()
-             .get("passwordTextField");
+             (PasswordField) loader.getNamespace().get("passwordTextField");
         final Text loginMessageText =
              (Text) loader.getNamespace().get("loginMessageText");
         final CheckBox rememberCheckBox =
-             (CheckBox) loader.getNamespace()
-             .get("rememberMeCheckbox");
-
-        // Todo - to backend file
-        if (AppLanguage.getLanguage().equals("pl")) {
-            polishLanguageButton.setSelected(true);
-        } else {
-            if (AppLanguage.getLanguage().equals("en")) {
-                englishLanguageButton.setSelected(true);
-            }
-        }
+             (CheckBox) loader.getNamespace().get("rememberMeCheckbox");
+        final Text textWelcome =
+              (Text) loader.getNamespace().get("loginHeader");
+        final Text textLog =
+              (Text) loader.getNamespace().get("loginSmallHeader");
+        final Text textQuote =
+              (Text) loader.getNamespace().get("loginQuoteText");
+        final Text textRights =
+              (Text) loader.getNamespace().get("loginRights");
 
         if (UserConfigReader.ifDataIsReady()) {
             try {
@@ -113,8 +108,7 @@ public class LoginLogic {
         }
         System.out.println(username + " " + password);
 
-        // Only event handlers above
-        /*
+        /*Only event handlers above.
          * Window draggable method. This action will allow user to drag window.
          */
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -125,7 +119,6 @@ public class LoginLogic {
                 root.requestFocus();
             }
         });
-
         root.setOnMouseDragged(new EventHandler<MouseEvent>() {
             @Override
             public void handle(final MouseEvent event) {
@@ -134,51 +127,59 @@ public class LoginLogic {
             }
         });
 
-        /*
-         * Window close button.
+        /*Window close button.
          * This action will close app window.
         */
-        closeButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(final ActionEvent e) {
-                primaryStage.close();
-            }
+        closeButton.setOnAction(e -> {
+            primaryStage.close();
+        });
+
+        /*Taking variables and give them a text which is binding.
+         *  from method I18N.
+         */
+        usernameText.promptTextProperty()
+            .bind(I18N.createStringBinding("user.Name"));
+        passwordText.promptTextProperty()
+            .bind(I18N.createStringBinding("password"));
+        loginButton.textProperty()
+            .bind(I18N.createStringBinding("login.Button"));
+        rememberCheckBox.textProperty()
+            .bind(I18N.createStringBinding("remember.checkBox"));
+        textWelcome.textProperty()
+            .bind(I18N.createStringBinding("Welcome.Text"));
+        textLog.textProperty()
+            .bind(I18N.createStringBinding("login.Text"));
+        textQuote.textProperty()
+            .bind(I18N.createStringBinding("quote.Text"));
+        textRights.textProperty()
+            .bind(I18N.createStringBinding("login.Rights"));
+
+        /*
+         * Language changing button.
+         * This action change application language to polish.
+        */
+        polishLanguageButton.setOnAction(e -> {
+            root.requestFocus();
+            polishLanguageButton.setSelected(true);
+            I18N.setLocale(Locale.forLanguageTag("pl"));
         });
 
         /*
          * Language changing button.
-         * This action will change application language to polish.
+         * This action change application language to english.
         */
-        polishLanguageButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(final ActionEvent e) {
-                AppLanguage.setLanguage("pl");
-                polishLanguageButton.setSelected(true);
-            }
-        });
-
-        /*
-         * Language changing button.
-         * This action will change application language to english.
-        */
-        englishLanguageButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(final ActionEvent e) {
-                root.requestFocus();
-                AppLanguage.setLanguage("en");
-                englishLanguageButton.setSelected(true);
-            }
+        englishLanguageButton.setOnAction(e -> {
+            root.requestFocus();
+            englishLanguageButton.setSelected(true);
+            I18N.setLocale(Locale.forLanguageTag("en"));
         });
 
         /*
          * Window minimalize button.
          * This action will minimalize app window.
         */
-        minimalizeButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(final ActionEvent e) {
-                primaryStage.setIconified(true);
-            }
+        minimalizeButton.setOnAction(e -> {
+            primaryStage.setIconified(true);
         });
 
         /*
@@ -196,7 +197,8 @@ public class LoginLogic {
                 final LoginLogic loginLogic = new LoginLogic();
                 if (loginLogic.ifPlaceIsEmpty(username, password)) {
                     loginMessageText
-                    .setText("Dane logowania nie zostały uzupełnione.");
+                        .setText(I18N.createStringBinding("empty.placeholders")
+                        .getValue());
                 } else {
                     if (loginLogic.ifInitialIsRight(username, password)) {
                         loginLogic.secondWindow(username, password);
@@ -209,7 +211,8 @@ public class LoginLogic {
                         primaryStage.close();
                     } else {
                         loginMessageText
-                        .setText("Nieprawidłowe dane logowania.");
+                            .setText(I18N.createStringBinding("invali.Data")
+                            .getValue());
                     }
                 }
                 loginButton.requestFocus();
@@ -221,7 +224,6 @@ public class LoginLogic {
      * If placeholder is empty will show false if
      * there is something then its true.
      * It must help us to create usual urgen that placeholder is empty.
-     *
      *@param username just username.
      *@param password just password.
      *@return boolean
@@ -235,7 +237,6 @@ public class LoginLogic {
         }
         return checkIt;
     }
-
     /**
      * Here is should be a new window.
      * @param username just username

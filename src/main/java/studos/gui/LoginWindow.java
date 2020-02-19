@@ -5,6 +5,7 @@
 package studos.gui;
 
 import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,7 +13,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import studos.logic.AppLanguage;
 import studos.logic.LoginLogic;
 import studos.logic.UserConfigReader;
 
@@ -42,7 +42,6 @@ public class LoginWindow extends Application {
          * and it's readable then reads data from last sucessfuly login.
         */
         UserConfigReader.readUserData();
-        AppLanguage.languageInitialization();
         /*
          * Setting window properties. Title, setting resizable to false
          * and removing context menu from window.
@@ -56,7 +55,8 @@ public class LoginWindow extends Application {
         // Loading controlls from .fxml file and setting size of window.
         final FXMLLoader loader =
              new FXMLLoader(GuiStarter.class
-             .getResource("view/loginWindow.fxml"));
+               .getResource("view/loginWindow.fxml"));
+
         final Parent root = loader.load();
         final int windowHeight = 494;
         final int windowWidth = 1110;
@@ -64,7 +64,6 @@ public class LoginWindow extends Application {
         // Temporary method that stores controlls
         // and handle controlls actions
         LoginLogic.controlls(loader, root, primaryStage);
-
         /*
          * Setting scene with settings declared above
          * and loading .css loginWindow file.

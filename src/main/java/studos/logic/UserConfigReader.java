@@ -163,7 +163,7 @@ private UserConfigReader() {
 
       // language
       final Element language = document.createElement("language");
-      language.appendChild(document.createTextNode(AppLanguage.getLanguage()));
+      language.appendChild(document.createTextNode(I18N.getLanguage()));
       root.appendChild(language);
 
       // create the xml file

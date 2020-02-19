@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import studos.logic.I18N;
 
 /**
  * Front end for main window.
@@ -26,9 +27,8 @@ public class MainWindow {
         final Stage primaryStage = new Stage();
         primaryStage.setTitle("Hello World!");
         final Button btn = new Button();
-        btn.setText("Say 'Hello World'");
+        btn.textProperty().bind(I18N.createStringBinding("button.name"));
         btn.setOnAction(new EventHandler<ActionEvent>() {
-
             @Override
             public void handle(final ActionEvent event) {
                 System.out.println("Hello World!");
