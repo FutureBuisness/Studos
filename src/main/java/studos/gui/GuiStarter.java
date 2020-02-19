@@ -1,7 +1,10 @@
 
 package studos.gui;
 
-import studos.logic.LoginValidator;
+import org.hibernate.Session;
+
+import studos.logic.DbConnect;
+import studos.logic.LoginLogic;
 
 /**
  * Just a simple class to start our app.
@@ -21,10 +24,11 @@ public final class GuiStarter {
     */
 
     public static void main(final String[] args) {
-        LoginValidator log = new LoginValidator();
-        log.metoda();
-
-
+      //  LoginValidator log = new LoginValidator();
+       // log.metoda();
+        final DbConnect dbc = new DbConnect();
+        final Session session = (Session) dbc.getSessionFactory().openSession();
+        LoginLogic.setSession(session);
         LoginWindow.main(args);
     }
 

@@ -1,45 +1,52 @@
 package studos.logic;
 
+import java.util.List;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
+/**
+ * Class for validating credencials to login.
+ */
 public class LoginValidator {
-    LoginClass loggg = new LoginClass();
-    public LoginValidator(){
-
+/**
+ * Session of hibernate.
+ */
+private final Session session;
+/**
+ * Constructor to transiction session.
+ * @param session1 session for database.
+*/
+    public LoginValidator(final Session session1) {
+        this.session = session1;
     };
 
-    final DbConnect dbc = new DbConnect();
-    final Session session = (Session) dbc.getSessionFactory().openSession();
-    final String result = (String) session.
-    createNativeQuery("select version()").
-    getSingleResult();
+/**
+ * Checks if provided login and password are correct.
+ * @param login checks if login exist in database.
+ * @param password checks if password exist in database.
+ * @return returns instance of client.
+*/
+    public LoginClass check(final String login, final String password) {
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<LoginClass> cr = builder.createQuery(LoginClass.class);
+        Root<LoginClass> mo = cr.from(LoginClass.class);
+        Predicate likeRestriction = builder.and(
+            builder.like(mo.get("login"), login),
+            builder.like(mo.get("password"), password)
+        );
 
+        cr.select(mo).where(likeRestriction);
 
-    public void metoda(){
-        session.getTransaction().begin();
-        LoginClass log = (LoginClass) session.find(LoginClass.class, "admin");
-        String login = log.getLogin();
-        loggg.setLogin(login);
-        String password = log.getPassword();
-        loggg.setPassword(password);
-        System.out.println(login);
-        System.out.println(password);
-        if (login.equals("admin") && password.equals("admin"))
-        {
-            System.out.println("Jest w bazie");
-        } else {
-            System.out.println("Nie ma w bazie");
+        Query<LoginClass> query = session.createQuery(cr);
+        List<LoginClass> x = query.getResultList();
+        if (x.isEmpty()) {
+            return null;
         }
-        System.out.println(loggg.getLogin());
-        System.out.println(loggg.getPassword());
-
-
-        session.getTransaction().commit();
-        //session.close();
+        return x.get(0);
     }
-
-
-
-
-
 }
