@@ -65,8 +65,8 @@ public class LoginWindow extends Application {
         // and handle controlls actions
         LoginLogic.controlls(loader, root, primaryStage);
         /*
-         * Setting scene with settings declared above
-         * and loading .css loginWindow file.
+        *Setting scene with settings declared above
+        *and loading .css loginWindow file.
         */
         final Scene scene = new Scene(root, windowWidth, windowHeight);
         scene.getStylesheets()
