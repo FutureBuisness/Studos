@@ -5,7 +5,6 @@
 package studos.logic;
 
 import java.util.Locale;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -154,6 +153,11 @@ public class LoginLogic {
         textRights.textProperty()
             .bind(I18N.createStringBinding("login.Rights"));
 
+        if (I18N.getDefaultLocale().getLanguage().equals("pl")) {
+            polishLanguageButton.setSelected(true);
+        } else {
+            englishLanguageButton.setSelected(true);
+        }
         /*
          * Language changing button.
          * This action change application language to polish.
@@ -186,37 +190,32 @@ public class LoginLogic {
          * Button login execute.
          * This action will run back-end login method.
         */
-        loginButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(final ActionEvent e) {
-                final String username = usernameText.getText();
-                final String password = passwordText.getText();
-                /*
-                 * Function below is checking user credentials.
-                 */
-                final LoginLogic loginLogic = new LoginLogic();
-                if (loginLogic.ifPlaceIsEmpty(username, password)) {
-                    loginMessageText
-                        .setText(I18N.createStringBinding("empty.placeholders")
-                        .getValue());
-                } else {
-                    if (loginLogic.ifInitialIsRight(username, password)) {
-                        loginLogic.secondWindow(username, password);
-                        if (rememberCheckBox.isSelected()) {
-                            UserConfigReader.saveUserData(usernameText
+        loginButton.setOnAction(e -> {
+            final String username = usernameText.getText();
+            final String password = passwordText.getText();
+            /*
+            * Function below is checking user credentials.
+            */
+            final LoginLogic loginLogic = new LoginLogic();
+            if (loginLogic.ifPlaceIsEmpty(username, password)) {
+                loginMessageText.textProperty()
+                        .bind(I18N.createStringBinding("empty.placeholders"));
+            } else {
+                if (loginLogic.ifInitialIsRight(username, password)) {
+                    loginLogic.secondWindow(username, password);
+                    if (rememberCheckBox.isSelected()) {
+                        UserConfigReader.saveUserData(usernameText
                                  .getText(), passwordText.getText(), "");
-                        } else {
-                            UserConfigReader.deleteUserData();
-                        }
-                        primaryStage.close();
                     } else {
-                        loginMessageText
-                            .setText(I18N.createStringBinding("invali.Data")
-                            .getValue());
+                        UserConfigReader.deleteUserData();
                     }
+                    primaryStage.close();
+                } else {
+                    loginMessageText.textProperty()
+                            .bind(I18N.createStringBinding("invalid.Data"));
                 }
-                loginButton.requestFocus();
             }
+            loginButton.requestFocus();
         });
     }
 
