@@ -24,8 +24,8 @@ public final class GuiStarter {
     */
 
     public static void main(final String[] args) {
-      //  LoginValidator log = new LoginValidator();
-       // log.metoda();
+        //  LoginValidator log = new LoginValidator();
+        // log.metoda();
         final DbConnect dbc = new DbConnect();
         final Session session = (Session) dbc.getSessionFactory().openSession();
         LoginLogic.setSession(session);
