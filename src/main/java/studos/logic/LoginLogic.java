@@ -5,6 +5,9 @@
 package studos.logic;
 
 import java.util.Locale;
+
+import org.hibernate.Session;
+
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,6 +27,11 @@ import studos.gui.MainWindow;
  */
 public class LoginLogic {
 
+/**
+ * Instance of LoginValidator class.
+ */
+    private static LoginValidator validator;
+
     /**
      * It's a boolean for all method.
      */
@@ -39,21 +47,29 @@ public class LoginLogic {
     private static double yOffset = 0;
 
     /**
-     * This method return if the iput data is right.
+     * This method return if the input data is right.
      * @param username just username.
      * @param password just password.
-     * @return True If it is right, false if it's not.
+     * @return True if it is right, false if it's not.
      */
-    public boolean ifInitialIsRight(
-        final String username, final String password) {
-        if (username.equals("admin") && password.equals("admin")) {
-            checkIt = true;
-        } else {
-            checkIt = false;
+
+    public boolean ifInitialIsRight(final String username,
+    final String password) {
+        LoginClass userInstance = validator.check(username, password);
+
+        if (userInstance == null) {
+            return false;
         }
-        return checkIt;
+        return true;
     }
 
+    /**
+     * Sets hibernate session for validator.
+     * @param session session of hibernate.
+     */
+    public static void setSession(final Session session) {
+        validator = new LoginValidator(session);
+    }
     /**
      * This is temporary method to handle back-end from controlls.
      * @param loader variable that store FXML file.
@@ -62,7 +78,7 @@ public class LoginLogic {
      */
     public static void controlls(
         final FXMLLoader loader, final Parent root, final Stage primaryStage) {
-        // Creating variables from content in front-end controlls.
+            // Creating variables from content in front-end controlls.
         final Button loginButton =
              (Button) loader.getNamespace().get("loginButton");
         final Button minimalizeButton =
@@ -98,6 +114,7 @@ public class LoginLogic {
             } catch (final Exception e) {
             }
         }
+        //System.out.println(username + " " + password);
 
         /*Only event handlers above.
          * Window draggable method. This action will allow user to drag window.
@@ -233,7 +250,6 @@ public class LoginLogic {
      * Here is should be a new window.
      * @param username just username
      * @param password just password
-     *
      */
 
     public void secondWindow(final String username, final String password) {
