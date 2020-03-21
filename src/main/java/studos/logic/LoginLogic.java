@@ -114,7 +114,6 @@ public class LoginLogic {
             } catch (final Exception e) {
             }
         }
-        //System.out.println(username + " " + password);
 
         /*Only event handlers above.
          * Window draggable method. This action will allow user to drag window.
