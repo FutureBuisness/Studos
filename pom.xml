@@ -83,11 +83,6 @@
       </dependency>
 
         <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>12.0.2</version>
-        </dependency>
-        <dependency>
           <groupId>org.testfx</groupId>
           <artifactId>testfx-core</artifactId>
           <version>4.0.16-alpha</version>
@@ -122,14 +117,6 @@
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>
-        <plugin>
-          <groupId>org.openjfx</groupId>
-          <artifactId>javafx-maven-plugin</artifactId>
-          <version>0.0.3</version>
-          <configuration>
-              <mainClass>hellofx/org.openjfx.App</mainClass>
-          </configuration>
-      </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
