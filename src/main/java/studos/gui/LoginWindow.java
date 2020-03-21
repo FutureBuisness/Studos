@@ -5,7 +5,6 @@
 package studos.gui;
 
 import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import studos.logic.I18N;
 import studos.logic.LoginLogic;
 import studos.logic.UserConfigReader;
 
@@ -46,7 +46,8 @@ public class LoginWindow extends Application {
          * Setting window properties. Title, setting resizable to false
          * and removing context menu from window.
         */
-        primaryStage.setTitle("Studos - Okno logowania aplikacji");
+        primaryStage.titleProperty()
+            .bind(I18N.createStringBinding("name.LoginWindow"));
         primaryStage.setResizable(false);
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.getIcons()

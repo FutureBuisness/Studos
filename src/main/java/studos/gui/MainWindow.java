@@ -27,7 +27,7 @@ public class MainWindow {
         final Stage primaryStage = new Stage();
         primaryStage.setTitle("Hello World!");
         final Button btn = new Button();
-        btn.textProperty().bind(I18N.createStringBinding("button.name"));
+        btn.textProperty().bind(I18N.createStringBinding("text.Button"));
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(final ActionEvent event) {
