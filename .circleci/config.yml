@@ -47,4 +47,3 @@ jobs:
       - run: 
           name: unit tests
           command: mvn test
-          no_output_timeout: 30m
